@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Inventory</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+        }
+        header {
+            background-color: #3f51b5;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #303f9f;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .inventory-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+            display: inline-block;
+            width: calc(33% - 20px);
+        }
+        .inventory-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .inventory-item h3 {
+            color: #ba1caf;
+        }
+        .edit-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .edit-form input {
+            padding: 5px;
+            margin: 5px;
+            width: 80%;
+        }
+        .edit-form button {
+            padding: 5px 10px;
+            background-color: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #303f9f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .inventory-item {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .inventory-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Cafe Inventory Management
+</header>
+
+<nav>
+    <div>
+        <a href="caffe main.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="staff.html">Staff Management</a>
+        <a href="inventory3.html">Inventory</a>
+        <a href="offer.html">Offers</a>
+        <a href="Feedback Form.png">Feedback</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h2>Inventory Items</h2>
+    
+    
+    <div class="inventory-item">
+        <img src="path_to_your_image/item1.jpg" alt="Coffee Beans">
+        <h3>Coffee Beans</h3>
+        <p>Current Quantity: <span id="coffee-quantity">50 kg</span></p>
+        <div class="edit-form">
+            <input type="number" id="coffee-edit" placeholder="New Quantity" min="0">
+            <button onclick="updateQuantity('coffee-quantity', 'coffee-edit', 'kg')">Update</button>
+        </div>
+    </div>
+
+    <div class="inventory-item">
+        <img src="path_to_your_image/item2.jpg" alt="Milk">
+        <h3>Milk</h3>
+        <p>Current Quantity: <span id="milk-quantity">30 liters</span></p>
+        <div class="edit-form">
+            <input type="number" id="milk-edit" placeholder="New Quantity" min="0">
+            <button onclick="updateQuantity('milk-quantity', 'milk-edit', 'liters')">Update</button>
+        </div>
+    </div>
+
+    <div class="inventory-item">
+        <img src="path_to_your_image/item3.jpg" alt="Pastries">
+        <h3>Pastries</h3>
+        <p>Current Quantity: <span id="pastries-quantity">100 pieces</span></p>
+        <div class="edit-form">
+            <input type="number" id="pastries-edit" placeholder="New Quantity" min="0">
+            <button onclick="updateQuantity('pastries-quantity', 'pastries-edit', 'pieces')">Update</button>
+        </div>
+    </div>
+
+   
+    <div class="inventory-item">
+        <img src="path_to_your_image/item4.jpg" alt="Sugar">
+        <h3>Sugar</h3>
+        <p>Current Quantity: <span id="sugar-quantity">20 kg</span></p>
+        <div class="edit-form">
+            <input type="number" id="sugar-edit" placeholder="New Quantity" min="0">
+            <button onclick="updateQuantity('sugar-quantity', 'sugar-edit', 'kg')">Update</button>
+        </div>
+    </div>
+
+    <div class="inventory-item">
+        <img src="path_to_your_image/item5.jpg" alt="Cups">
+        <h3>Cups</h3>
+        <p>Current Quantity: <span id="cups-quantity">200 pieces</span></p>
+        <div class="edit-form">
+            <input type="number" id="cups-edit" placeholder="New Quantity" min="0">
+            <button onclick="updateQuantity('cups-quantity', 'cups-edit', 'pieces')">Update</button>
+        </div>
+    </div>
+
+    <div class="inventory-item">
+        <img src="path_to_your_image/item6.jpg" alt="Coffee Filters">
+        <h3>Coffee Filters</h3>
+        <p>Current Quantity: <span id="filters-quantity">150 pieces</span></p>
+        <div class="edit-form">
+            <input type="number" id="filters-edit" placeholder="New Quantity" min="0">
+            <button onclick="updateQuantity('filters-quantity', 'filters-edit', 'pieces')">Update</button>
+        </div>
+    </div>
+
+    <div class="inventory-item">
+        <img src="path_to_your_image/item7.jpg" alt="Juice">
+        <h3>Juice</h3>
+        <p>Current Quantity: <span id="juice-quantity">50 liters</span></p>
+        <div class="edit-form">
+            <input type="number" id="juice-edit" placeholder="New Quantity" min="0">
+            <button onclick="updateQuantity('juice-quantity', 'juice-edit', 'liters')">Update</button>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    ©️ 2024 Cafe Management | Contact: 8558000235
+</footer>
+
+<script>
+    function updateQuantity(quantityId, inputId, unit) {
+        const newQuantity = document.getElementById(inputId).value;
+        if (newQuantity && !isNaN(newQuantity)) {
+            document.getElementById(quantityId).textContent = newQuantity + ' ' + unit;
+            document.getElementById(inputId).value = ''; 
+        } else {
+            alert("Please enter a valid quantity");
+        }
+    }
+</script>
+
+</body>
+</html>

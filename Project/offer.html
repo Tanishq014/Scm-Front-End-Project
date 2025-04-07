@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Management System - Offers</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3; 
+        }
+        header {
+            background-color: #3f51b5; 
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #303f9f; 
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        footer {
+            background-color: #303f9f; 
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+        }
+        .offer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            margin-top: 40px;
+            padding: 20px;
+        }
+        .offer-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .offer-item img {
+            width: 100%;
+            height: 180px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .offer-item h3 {
+            color: #3f51b5; 
+            margin-top: 15px;
+            font-size: 24px;
+        }
+        .offer-item p {
+            color: #757575; 
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .offer-item button {
+            padding: 10px 15px;
+            background-color: #3f51b5; 
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        .offer-item button:hover {
+            background-color: #303f9f; 
+        }
+        .offer-item:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .offer-item {
+                width: 45%;
+            }
+        }
+        @media (max-width: 480px) {
+            .offer-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Welcome to the Cafe Manager!
+    </header>
+
+    <nav>
+        <div>
+            <a href="caffe main.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="loginpgstaff.html">Staff Management</a>
+            <a href="loginpginventory.html">Inventory</a>
+            <a href="offer.html">Offers</a>
+            <a href="Feedback Form.png">Feedback</a>
+        </div>
+    </nav>
+
+    
+    <section id="Offers">
+        <div style="text-align: center;">
+            <h2 style="color: #3f51b5; font-size: 36px; margin-bottom: 20px;">Special Offers</h2>
+            <p style="color: #303f9f; font-size: 18px;">Check out our limited-time offers and enjoy amazing deals at our cafe!</p>
+        </div>
+
+        <div class="offer-container">
+          
+            <div class="offer-item">
+                <h3>Combo Deal</h3>
+                <p>Get a coffee and a pastry for just ₹120 Perfect for your morning break.</p>
+                <button>Claim Offer</button>
+            </div>
+
+           
+            <div class="offer-item">
+                <h3>Happy Hour</h3>
+                <p>Buy one coffee, get the second one free! Available from 3 PM to 5 PM every day.</p>
+                <button>Claim Offer</button>
+            </div>
+
+           
+            <div class="offer-item">
+                <h3>Cold Brew Special</h3>
+                <p>Enjoy a refreshing cold brew at 20% off. A perfect choice for hot afternoons!</p>
+                <button>Claim Offer</button>
+            </div>
+
+            

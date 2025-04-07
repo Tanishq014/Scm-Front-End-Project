@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+        }
+        header {
+            background-color: #3f51b5;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #303f9f;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .login {
+            margin-left: auto;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .category-heading {
+            width: 100%;
+            margin-top: 30px;
+            font-size: 24px;
+            color: #3f51b5;
+            text-align: center;
+            border-bottom: 2px solid #c5cae9;
+            padding-bottom: 10px;
+        }
+        .menu-item {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 22%;
+            margin: 10px 0;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .menu-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .menu-item h3 {
+            margin: 10px 0;
+            color: #ba1caf;
+        }
+        .menu-item p {
+            color: #757575;
+        }
+        .menu-item button {
+            padding: 10px 15px;
+            background-color: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        footer {
+            background-color: #303f9f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+        }
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+            padding-top: 60px; 
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px; 
+            border-radius: 10px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal input[type="text"], 
+        .modal input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .modal button {
+            background-color: #3f51b5;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .menu-item {
+                width: 45%; 
+            }
+        }
+        @media (max-width: 480px) {
+            .menu-item {
+                width: 100%; 
+            }
+            .modal-content {
+                width: 90%; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+            <a href="caffe main.html">Home</a>
+            <a href="#Menu">Menu</a>
+            <a href="loginpgstaff.html">Staff Management</a>
+            <a href="loginpginventory.html">Inventory</a>
+            <a href="offer.html">Offers</a>
+            <a href="Feedback Form.png">Feedback</a>
+        </div>
+       
+    </nav>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Employee Login</h2>
+            <form>
+                <input type="text" placeholder="Username" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    <section class="container">
+
+        <div class="category-heading" id="Menu">Hot Coffees</div>
+        <div class="menu-item">
+            <img src="C:\Users\Preetish\Downloads\affogato.jpg" alt="Affogato">
+            <h3>Affogato</h3>
+            <p>Espresso poured over vanilla ice cream.</p>
+            <p>Price: ₹130</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="C:\Users\Preetish\Downloads\download.jpg" alt="Fresh Mocha Coffee">
+            <h3>Fresh Mocha Coffee</h3>
+            <p>Rich chocolate and espresso blend.</p>
+            <p>Price: ₹130</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="C:\Users\Preetish\Downloads\download (1).jpg" alt="Café Latte">
+            <h3>Café Latte</h3>
+            <p>Smooth and creamy espresso with steamed milk.</p>
+            <p>Price: ₹150</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="category-heading">Cold Coffees</div>
+        <div class="menu-item">
+            <img src="C:\Users\Preetish\Downloads\download (2).jpg" alt="Iced Coffee">
+            <h3>Iced Coffee</h3>
+            <p>Chilled coffee brewed to perfection.</p>
+            <p>Price: ₹120</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="C:\Users\Preetish\Downloads\download (3).jpg" alt="Cold Brew">
+            <h3>Cold Brew</h3>
+            <p>Rich flavor with a smooth finish.</p>
+            <p>Price: ₹140</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="C:\Users\Preetish\Downloads\download (4).jpg" alt="Iced Latte">
+            <h3>Iced Latte</h3>
+            <p>Espresso with cold milk over ice.</p>
+            <p>Price: ₹160</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="category-heading">Sandwiches</div>
+        <div class="menu-item">
+            <img src="C:\Users\Preetish\Downloads\download (5).jpg" alt="Club Sandwich">
+            <h3>Club Sandwich</h3>
+            <p>Triple-decker sandwich with fresh ingredients.</p>
+            <p>Price: ₹180</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="C:\Users\Preetish\Downloads\download (6).jpg" alt="Grilled Cheese">
+            <h3>Grilled Cheese</h3>
+            <p>Classic sandwich with melted cheese.</p>
+            <p>Price: ₹150</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="C:\Users\Preetish\Downloads\download (7).jpg" alt="Veggie Sandwich">
+            <h3>Veggie Sandwich</h3>
+            <p>Loaded with fresh vegetables.</p>
+            <p>Price: ₹140</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="category-heading">Bagels</div>
+        <div class="menu-item">
+            <img src="C:\Users\Preetish\Downloads\download (8).jpg" alt="Plain Bagel">
+            <h3>Plain Bagel</h3>
+            <p>Soft and chewy, perfect with cream cheese.</p>
+            <p>Price: ₹80</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="C:\Users\Preetish\Downloads\download (9).jpg" alt="Everything Bagel">
+            <h3>Everything Bagel</h3>
+            <p>Topped with seeds and spices.</p>
+            <p>Price: ₹90</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="C:\Users\Preetish\Downloads\download (10).jpg" alt="Cinnamon Raisin Bagel">
+            <h3>Cinnamon Raisin Bagel</h3>
+            <p>Sweet and spiced with raisins.</p>
+            <p>Price: ₹100</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="category-heading">Desserts</div>
+        <div class="menu-item">
+            <img src="C:\Users\Preetish\Downloads\download (11).jpg" alt="Chocolate Cake">
+            <h3>Chocolate Cake</h3>
+            <p>Decadent chocolate cake with frosting.</p>
+            <p>Price: ₹200</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="C:\Users\Preetish\Downloads\download (12).jpg" alt="Cheesecake">
+            <h3>Cheesecake</h3>
+            <p>Rich and creamy cheesecake topped with berries.</p>
+            <p>Price: ₹220</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="C:\Users\Preetish\Downloads\download (13).jpg" alt="Tiramisu">
+            <h3>Tiramisu</h3>
+            <p>Classic Italian dessert with coffee flavor.</p>
+            <p>Price: ₹230</p>
+            <button>Add to Cart</button>
+        </div>
+    </section>
+     <script>
+        var modal = document.getElementById("loginModal");
+        var btn = document.getElementById("loginBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
+</body>
+</html>

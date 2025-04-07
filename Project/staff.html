@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+        }
+        header {
+            background-color: #3f51b5;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #303f9f;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .container {
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            justify-content: space-between;
+        }
+        .staff-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            width: calc(33% - 20px); /* Ensure 3 cards per row */
+            box-sizing: border-box;
+        }
+        .staff-card h3 {
+            color: #ba1caf;
+        }
+        .staff-card p {
+            font-size: 14px;
+        }
+        .remove-btn {
+            padding: 5px 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .add-staff-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .add-staff-form input,
+        .add-staff-form select {
+            padding: 10px;
+            margin: 5px;
+            width: 80%;
+        }
+        .add-staff-form button {
+            padding: 10px 20px;
+            background-color: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #303f9f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .staff-card {
+                width: calc(50% - 20px); /* Two cards per row on medium screens */
+            }
+        }
+        @media (max-width: 480px) {
+            .staff-card {
+                width: 100%; /* One card per row on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Staff Management Portal
+</header>
+
+<nav>
+    <div>
+        <a href="caffe main.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="staff.html">Staff Management</a>
+        <a href="inventory3.html">Inventory</a>
+        <a href="offer.html">Offers</a>
+        <a href="Feedback Form.png">Feedback</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h2>Staff Members</h2>
+    
+    
+    <div class="staff-card" id="staff1">
+        <h3>Tanishq</h3>
+        <p>Role: Barista</p>
+        <p>Contact: 9876543210</p>
+        <p>Status: Active</p>
+        <button class="remove-btn" onclick="removeStaff('staff1')">Remove</button>
+    </div>
+    <div class="staff-card" id="staff2">
+        <h3>Preetish</h3>
+        <p>Role: Chef</p>
+        <p>Contact: 8765432109</p>
+        <p>Status: Active</p>
+        <button class="remove-btn" onclick="removeStaff('staff2')">Remove</button>
+    </div>
+    <div class="staff-card" id="staff3">
+        <h3>Tanmay</h3>
+        <p>Role: Waiter</p>
+        <p>Contact: 7654321098</p>
+        <p>Status: Active</p>
+        <button class="remove-btn" onclick="removeStaff('staff3')">Remove</button>
+    </div>
+    <div class="staff-card" id="staff4">
+        <h3>Aman</h3>
+        <p>Role: Cashier</p>
+        <p>Contact: 7539514862</p>
+        <p>Status: Active</p>
+        <button class="remove-btn" onclick="removeStaff('staff4')">Remove</button>
+    </div>
+    <div class="staff-card" id="staff5">
+        <h3>Kriti</h3>
+        <p>Role: Chef</p>
+        <p>Contact: 6123456789</p>
+        <p>Status: On Leave</p>
+        <button class="remove-btn" onclick="removeStaff('staff5')">Remove</button>
+    </div>
+    <div class="staff-card" id="staff6">
+        <h3>Ravi</h3>
+        <p>Role: Cleaner</p>
+        <p>Contact: 8745612369</p>
+        <p>Status: Inactive</p>
+        <button class="remove-btn" onclick="removeStaff('staff6')">Remove</button>
+    </div>
+
+    <div class="add-staff-form">
+        <h3>Add New Staff</h3>
+        <input type="text" id="staff-name" placeholder="Staff Name" required>
+        <input type="text" id="staff-role" placeholder="Staff Role" required>
+        <input type="text" id="staff-contact" placeholder="Staff Contact" required>
+        <select id="staff-status" required>
+            <option value="active">Active</option>
+            <option value="on-leave">On Leave</option>
+            <option value="inactive">Inactive</option>
+        </select>
+        <button onclick="addStaff()">Add Staff</button>
+    </div>
+</div>
+
+<footer>
+    ©️ 2024 Cafe Management | Contact: 8558000235
+</footer>
+
+<script>
+    function addStaff() {
+        const name = document.getElementById('staff-name').value;
+        const role = document.getElementById('staff-role').value;
+        const contact = document.getElementById('staff-contact').value;
+        const status = document.getElementById('staff-status').value;
+
+        if (name && role && contact && status) {
+            const staffContainer = document.querySelector('.container');
+            const staffCard = document.createElement('div');
+            staffCard.classList.add('staff-card');
+            const staffId = 'staff' + (staffContainer.children.length + 1); 
+            staffCard.setAttribute('id', staffId);
+            staffCard.innerHTML = `
+                <h3>${name}</h3>
+                <p>Role: ${role}</p>
+                <p>Contact: ${contact}</p>
+                <p>Status: ${status.charAt(0).toUpperCase() + status.slice(1)}</p>
+                <button class="remove-btn" onclick="removeStaff('${staffId}')">Remove</button>
+            `;           
+            staffContainer.insertBefore(staffCard, document.querySelector('.add-staff-form'));           
+            document.getElementById('staff-name').value = '';
+            document.getElementById('staff-role').value = '';
+            document.getElementById('staff-contact').value = '';
+            document.getElementById('staff-status').value = 'active';
+        } else {
+            alert("Please fill in all the fields.");
+        }
+    }
+    function removeStaff(staffId) {
+        const staffCard = document.getElementById(staffId);
+        if (staffCard) {
+            staffCard.remove(); 
+        }
+    }
+</script>
+
+</body>
+</html>
